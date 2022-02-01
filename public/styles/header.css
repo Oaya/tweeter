@@ -1,0 +1,17 @@
+header {
+  height: 400px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-color: #a1c9eb;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+}
+.avatar_img {
+  margin-top: -8rem;
+}
+.avatar_name {
+  margin-top: 0.5rem;
+}

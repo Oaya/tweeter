@@ -1,0 +1,29 @@
+.new-tweet_form {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: black solid 3px;
+  background-color: #f4f1ec;
+}
+textarea:focus {
+  outline: none;
+  border-bottom: rgb(107, 107, 248) solid 3px;
+  margin-bottom: 0.5rem;
+}
+
+.new-tweet_bottom {
+  display: flex;
+  font-family: "bungee";
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.tweet_button {
+  border: none;
+  background-color: #4056a1;
+  color: #f4f1ec;
+  padding: 0.5rem;
+}
