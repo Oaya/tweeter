@@ -27,3 +27,6 @@ textarea:focus {
   color: #f4f1ec;
   padding: 0.5rem;
 }
+.btn_red {
+  color: red;
+}
