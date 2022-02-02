@@ -27,6 +27,7 @@ const data = [
     created_at: 1461113959088,
   },
 ];
+
 $(document).ready(() => {
   const renderTweets = function (tweets) {
     // loops through tweets
@@ -72,4 +73,12 @@ $(document).ready(() => {
   };
 
   renderTweets(data);
+
+  //form with ajax//
+  const $form = $("#new-tweet_form");
+  $form.on("submit", function (e) {
+    e.preventDefault();
+    const serializedData = $(this).serialize();
+    console.log(serializedData);
+  });
 });

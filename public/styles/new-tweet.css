@@ -1,4 +1,4 @@
-.new-tweet_form {
+#new-tweet_form {
   display: flex;
   flex-direction: column;
 }
