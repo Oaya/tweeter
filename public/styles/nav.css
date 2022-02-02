@@ -9,6 +9,8 @@ nav {
   align-items: center;
   z-index: 100;
   width: 100vw;
+  position: fixed;
+  top: 0;
 }
 .nav_logo {
   font-family: "Bungee", cursive;
