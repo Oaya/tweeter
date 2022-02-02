@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/styles/nav.css " type="text/css" />
     <link rel="stylesheet" href="/styles/header.css " type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css " type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-list.css " type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
@@ -52,26 +53,49 @@
       </div>
     </nav>
 
-    <header>
+    <header class="avatar-header">
       <div class="avatar_img">
         <img src="/images/profile-hex.png" alt="avater_image" />
       </div>
       <div class="avatar_name"><strong>Aya</strong> Okizaki</div>
     </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+
+    <main>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form class="new-tweet_form" method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about? </label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="new-tweet_bottom">
+            <button class="tweet_button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">
+              140</output
+            >
+          </div>
+        </form>
+      </section>
+
+      <article class="tweet-list">
+        <header class="tweet-header">
+          <p>Newton</p>
+          <p>@Sirisaac</p>
+        </header>
+        <main class="tweet-text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+          voluptatibus accusantium, iure tempora ipsam praesentium magnam
+          aspernatur similique mollitia aliquid rem sequi illum itaque
+          voluptates. At, cumque maiores. Dolorum, minus.
+        </main>
+        <footer class="tweet-footer">
+          <span>10 days ago</span>
+          <div class="tweet-footer-right">
+            <i class="icon fa-solid fa-flag"></i>
+            <i class="icon fa-regular fa-retweet"></i>
+            <i class="icon fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    </main>
   </body>
-  <main>
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form class="new-tweet_form" method="POST" action="/tweets">
-        <label for="tweet-text">What are you humming about? </label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div class="new-tweet_bottom">
-          <button class="tweet_button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text"> 140</output>
-        </div>
-      </form>
-    </section>
-  </main>
 </html>

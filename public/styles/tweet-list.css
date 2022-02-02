@@ -1,0 +1,31 @@
+.tweet-list {
+  border: black solid 3px;
+  padding: 1.5rem 2rem;
+  margin: 8rem 0;
+}
+.tweet-list:hover {
+  box-shadow: 8px 5px 5px rgb(96, 133, 202);
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-footer {
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: black solid 3px;
+  align-items: flex-start;
+}
+.icon {
+  margin-right: 1.5rem;
+  color: #4056a1;
+  font-size: 1.5rem;
+}
+
+.icon:hover {
+  color: rgb(189, 149, 64);
+}
