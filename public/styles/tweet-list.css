@@ -10,6 +10,13 @@
 .tweet-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.tweet-header_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tweet-footer {
@@ -18,10 +25,25 @@
   display: flex;
   justify-content: space-between;
   border-top: black solid 3px;
-  align-items: flex-start;
+  align-items: center;
+}
+.tweet-time {
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+}
+.tweet-text {
+  margin-left: 2rem;
+}
+.face-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.avatar-name {
+  color: #9faddb;
 }
 .icon {
-  margin-right: 1.5rem;
+  margin-right: 1.2rem;
   color: #4056a1;
   font-size: 1.5rem;
 }
