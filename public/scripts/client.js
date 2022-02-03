@@ -1,36 +1,31 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
 $(document).ready(() => {
+  //extract the only text part from the input//
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  //fetch tweets form /tweets page//
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    })
+      .then((tweets) => {
+        $("#tweet-container").empty();
+        renderTweets(tweets);
+      })
+      .catch((error) => {
+        console.log(`error: ${error}`);
+      });
+  };
+
+  loadTweets();
+
   const createTweetElement = (tweetData) => {
     const timePast = timeago.format(tweetData.created_at);
+    const safeHTML = escape(tweetData.content.text);
     const $tweet = `
   <article class="tweet-list">
           <header class="tweet-header">
@@ -46,7 +41,7 @@ $(document).ready(() => {
             <p class="avatar-name">${tweetData.user.handle}</p>
           </header>
           <div class="tweet-text">
-          ${tweetData.content.text}
+          ${safeHTML}
           </div>
           <footer class="tweet-footer">
             <span class="tweet-time">${timePast}</span>
@@ -68,38 +63,36 @@ $(document).ready(() => {
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets containe
       const $tweet = createTweetElement(tweet);
-      $("#tweet-container").append($tweet);
+      $("#tweet-container").prepend($tweet);
     }
   };
-
-  //fetch tweets form /tweets page//
-  const loadTweets = () => {
-    $.ajax({
-      method: "GET",
-      url: "/tweets",
-    }).then((tweets) => {
-      console.log(tweets);
-      $("#tweet-container").empty();
-      renderTweets(tweets);
-    });
-  };
-
-  loadTweets();
 
   //post form with ajax//
   const $form = $("#new-tweet_form");
   $form.on("submit", function (e) {
     e.preventDefault();
     const serializedData = $(this).serialize();
-    console.log(serializedData);
 
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: serializedData,
-    }).then(() => {
-      console.log(`created new tweet`);
-      loadTweets();
-    });
+    const textarea = $(this).children("#tweet-text").val();
+
+    if (textarea.length < 1) {
+      alert(`input feild can't be empty`);
+    } else if (textarea.length > 140) {
+      alert(`The tweet should be less than 140 words`);
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: serializedData,
+      })
+        .then(() => {
+          console.log(`created new tweet`);
+          $("#tweet-text").val("");
+          loadTweets();
+        })
+        .catch((error) => {
+          console.log(`error: ${error}`);
+        });
+    }
   });
 });
