@@ -29,16 +29,6 @@ const data = [
 ];
 
 $(document).ready(() => {
-  const renderTweets = function (tweets) {
-    // loops through tweets
-    for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets containe
-      const $tweet = createTweetElement(tweet);
-      $("#tweet-container").prepend($tweet);
-    }
-  };
-
   const createTweetElement = (tweetData) => {
     const timePast = timeago.format(tweetData.created_at);
     const $tweet = `
@@ -72,13 +62,44 @@ $(document).ready(() => {
     return $tweet;
   };
 
-  renderTweets(data);
+  const renderTweets = function (tweets) {
+    // loops through tweets
+    for (const tweet of tweets) {
+      // calls createTweetElement for each tweet
+      // takes return value and appends it to the tweets containe
+      const $tweet = createTweetElement(tweet);
+      $("#tweet-container").append($tweet);
+    }
+  };
 
-  //form with ajax//
+  //fetch tweets form /tweets page//
+  const loadTweets = () => {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+    }).then((tweets) => {
+      console.log(tweets);
+      $("#tweet-container").empty();
+      renderTweets(tweets);
+    });
+  };
+
+  loadTweets();
+
+  //post form with ajax//
   const $form = $("#new-tweet_form");
   $form.on("submit", function (e) {
     e.preventDefault();
     const serializedData = $(this).serialize();
     console.log(serializedData);
+
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: serializedData,
+    }).then(() => {
+      console.log(`created new tweet`);
+      loadTweets();
+    });
   });
 });
