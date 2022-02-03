@@ -22,6 +22,17 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
   color: #ff0000;
+  cursor: pointer;
+  animation: MoveUpDown 1s infinite;
+}
+/* animation */
+@keyframes MoveUpDown {
+  0%,
+  100% {
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

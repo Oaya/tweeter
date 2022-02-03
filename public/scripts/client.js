@@ -26,12 +26,13 @@ $(document).ready(() => {
   const createTweetElement = (tweetData) => {
     const timePast = timeago.format(tweetData.created_at);
     const safeHTML = escape(tweetData.content.text);
+
     const $tweet = `
   <article class="tweet-list">
           <header class="tweet-header">
             <div class="tweet-header_left">
               <img
-                class="face-icon"
+               
                 src="${tweetData.user.avatars}"
                 alt="face icon"
               />
@@ -71,6 +72,22 @@ $(document).ready(() => {
   const $alert = $(".alert");
   $alert.hide();
 
+  //form slide down and up//
+  const $navArrow = $(".nav_arrow");
+  const $newTweet = $(".new-tweet");
+  const $textarea = $("#tweet-text");
+  $navArrow.on("click", function () {
+    $newTweet.toggle();
+    console.log($textarea);
+    $textarea[0].focus();
+
+    // $newTweet
+    // .toggle()
+    // .children("#new-tweet_form")
+    // .children(".tweet-text")
+    // .focus();
+  });
+
   //post form with ajax//
   const $form = $("#new-tweet_form");
   $form.on("submit", function (e) {
@@ -101,7 +118,7 @@ $(document).ready(() => {
           loadTweets();
         })
         .catch((error) => {
-          console.log(`error: ${error}`);
+          console.log(error);
         });
     }
   });
