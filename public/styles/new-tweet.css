@@ -1,6 +1,7 @@
 #new-tweet_form {
   display: flex;
   flex-direction: column;
+  margin-top: 5rem;
 }
 textarea {
   resize: none;
@@ -29,4 +30,14 @@ textarea:focus {
 }
 .btn_red {
   color: red;
+}
+
+.alert {
+  color: red;
+  border: red solid 3px;
+  padding: 0.8rem 1.5rem;
+  margin: 2rem 0 3rem;
+}
+.alert-message {
+  margin: 0 1rem;
 }

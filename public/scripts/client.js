@@ -67,6 +67,10 @@ $(document).ready(() => {
     }
   };
 
+  // //hide the alert message first render//
+  const $alert = $(".alert");
+  $alert.hide();
+
   //post form with ajax//
   const $form = $("#new-tweet_form");
   $form.on("submit", function (e) {
@@ -76,9 +80,15 @@ $(document).ready(() => {
     const textarea = $(this).children("#tweet-text").val();
 
     if (textarea.length < 1) {
-      alert(`input feild can't be empty`);
+      $alert
+        .slideDown()
+        .children(".alert-message")
+        .text(`Input feild can't be empty`);
     } else if (textarea.length > 140) {
-      alert(`The tweet should be less than 140 words`);
+      $alert
+        .slideDown()
+        .children(".alert-message")
+        .text(`The tweet should be less than 140 words`);
     } else {
       $.ajax({
         method: "POST",
