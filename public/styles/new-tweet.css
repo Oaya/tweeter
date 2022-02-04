@@ -1,6 +1,7 @@
 #new-tweet_form {
   display: flex;
   flex-direction: column;
+  margin-top: 3rem;
 }
 textarea {
   resize: none;
@@ -42,4 +43,9 @@ textarea:focus {
 }
 .name {
   margin-left: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+  #new-tweet_form {
+    margin-top: 0;
+  }
 }

@@ -37,6 +37,9 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  html {
+    max-width: 1024px;
+  }
   main {
     margin-top: 200px;
     width: 50%;

@@ -53,13 +53,11 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="nav_logo">tweeter</span>
-      <div class="right_nav">
+      <div class="nav_right">
         <span><strong> Write</strong> a new tweet</span>
        <i class="nav_arrow fas fa-angle-double-down"></i></div>
       </div>
     </nav>
-
-
 
     <header class="avatar-header">
       <div class="avatar-img-box">
@@ -76,7 +74,7 @@
           <span class="alert-message"></span>
           <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <form id="new-tweet_form" method="POST" action="/tweets">
+        <form id="new-tweet_form" method="POST" >
           <label for="tweet-text">What are you humming about? </label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="new-tweet_bottom">

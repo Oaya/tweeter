@@ -1,6 +1,6 @@
 nav {
-  background-color: #4056a1;
-  color: #ffffff;
+  background-color: transparent;
+  color: #2b3a6a;
   height: 120px;
   padding: 0 1.5em;
   display: flex;
@@ -16,6 +16,9 @@ nav {
   font-family: "Bungee", cursive;
   font-size: 1.5em;
 }
+.nav_right {
+  margin-top: 2.3rem;
+}
 
 .nav_arrow {
   display: flex;
@@ -26,6 +29,7 @@ nav {
   color: #ff0000;
   cursor: pointer;
   animation: MoveUpDown 1s infinite;
+  transition: all 0.3s;
 }
 /* animation */
 @keyframes MoveUpDown {
@@ -34,5 +38,13 @@ nav {
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056a1;
+    color: #ffffff;
+    height: 120px;
   }
 }
