@@ -7,6 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 !["tweet page"](https://github.com/Oaya/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["tweet post field"](https://github.com/Oaya/tweeter/blob/master/docs/tweeting.png?raw=true)
 
 ## Getting Started
 
