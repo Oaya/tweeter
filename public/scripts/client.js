@@ -21,28 +21,31 @@ $(document).ready(() => {
       $("#tweet-container").prepend($tweet);
     }
   };
+
   //hide the alert message first render//
   const $alert = $(".alert");
   $alert.hide();
 
+  const checktweetLength = (textarea) => {
+    if (textarea.length < 1) {
+      return { message: `Input feild can't be empty` };
+    } else if (textarea.length > 140) {
+      return { message: `The tweet should be less than 140 words` }.text(``);
+    } else {
+      return { message: false };
+    }
+  };
+
   //post new tweet //
   $("#new-tweet_form").submit(function (e) {
-    //error message//
-
     e.preventDefault();
     const serializedData = $(this).serialize();
     const textarea = $(this).children("#tweet-text").val();
 
-    if (textarea.length < 1) {
-      $(".alert")
-        .slideDown()
-        .children(".alert-message")
-        .text(`Input feild can't be empty`);
-    } else if (textarea.length > 140) {
-      $(".alert")
-        .show()
-        .children(".alert-message")
-        .text(`The tweet should be less than 140 words`);
+    const error = checktweetLength(textarea);
+
+    if (error.message) {
+      $alert.slideDown().children(".alert-message").text(error.message);
     } else {
       $.post("/tweets", serializedData)
         .then(() => {
