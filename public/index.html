@@ -62,12 +62,14 @@
     <header class="avatar-header">
       <div class="avatar-img-box">
         <img class ="avatar-img" src="/images/profile-hex.png" alt="avater-image" />
-        <div class="avatar-name"><strong>Aya</strong> Okizaki</div>
+        <div class="avatar-name"><strong>Aya</strong> O</div>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
 
     <main>
+      <span class="scroll-arrow"><i class="fas fa-angle-double-up"></i></span>
+
       <section class="new-tweet">
         <div class="alert">
           <i class="fas fa-exclamation-triangle"></i>
@@ -75,8 +77,8 @@
           <i class="fas fa-exclamation-triangle"></i>
         </div>
         <form id="new-tweet_form" method="POST" >
-          <label for="tweet-text">What are you humming about? </label>
-          <textarea name="text" id="tweet-text"></textarea>
+
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="new-tweet_bottom">
             <button class="tweet_button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">
@@ -86,7 +88,7 @@
         </form>
       </section>
       <section id="tweet-container"></section>
-      <i class="scroll-arrow fas fa-angle-double-up"></i>
+     
     </main>
   </body>
 </html>

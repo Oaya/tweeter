@@ -1,7 +1,8 @@
 .tweet-list {
   border: black solid 3px;
   padding: 1.5rem 2rem;
-  margin: 8rem 0;
+  /* margin: 8rem 0; */
+  margin-bottom: 8rem;
 }
 .tweet-list:hover {
   box-shadow: 8px 5px 5px rgb(96, 133, 202);

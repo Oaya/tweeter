@@ -1,7 +1,7 @@
 #new-tweet_form {
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 textarea {
   resize: none;

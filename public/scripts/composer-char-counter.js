@@ -1,6 +1,9 @@
 (function () {
   $(document).ready(() => {
     $("#tweet-text").on("input", output);
+
+    $(window).on("scroll", scroll);
+    $(".scroll-arrow").on("click", click);
   });
 
   const output = function () {
@@ -16,16 +19,12 @@
     $counter.text(maxmumLength - textLength);
   };
 
-  //button for scroll//
-  const $scrollButton = $(".scroll-arrow");
-  //first hide the button
-
   //when scroll it's appear//
-  $(window).on("scroll", function () {
-    $scrollButton.show();
-  });
+  const scroll = function () {
+    $(".scroll-arrow").show();
+  };
   //press button and scrollup to the top//
-  $scrollButton.on("click", function () {
-    $(window).scrollTop();
-  });
+  const click = function () {
+    window.scrollTo(0, $(".new-tweet").offset().top - 200);
+  };
 })();
