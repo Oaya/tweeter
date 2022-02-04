@@ -39,7 +39,7 @@ $(document).ready(() => {
               <p class="name"> ${tweetData.user.name}</p>
             </div>
 
-            <p class="avatar-name">${tweetData.user.handle}</p>
+            <p class="handle-name">${tweetData.user.handle}</p>
           </header>
           <div class="tweet-text">
           ${safeHTML}
@@ -75,17 +75,13 @@ $(document).ready(() => {
   //form slide down and up//
   const $navArrow = $(".nav_arrow");
   const $newTweet = $(".new-tweet");
-  const $textarea = $("#tweet-text");
-  $navArrow.on("click", function () {
-    $newTweet.toggle();
-    console.log($textarea);
-    $textarea[0].focus();
 
-    // $newTweet
-    // .toggle()
-    // .children("#new-tweet_form")
-    // .children(".tweet-text")
-    // .focus();
+  $navArrow.on("click", function () {
+    $newTweet
+      .toggle()
+      .children("#new-tweet_form")
+      .children("#tweet-text")[0]
+      .focus();
   });
 
   //post form with ajax//

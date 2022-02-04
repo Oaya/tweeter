@@ -1,5 +1,4 @@
 .avatar-header {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,9 +7,32 @@
   background-color: #a1c9eb;
   background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 }
-.avatar_img {
+.avatar-img-box {
   margin-top: 12rem;
 }
-.avatar_name {
+.avatar-name {
   margin-bottom: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .avatar-header {
+    display: inline-block;
+    width: 35%;
+    margin-top: 200px;
+    margin-left: 1em;
+  }
+  .avatar-img-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+  }
+  .avatar-img {
+    height: 4.5em;
+    width: 4.5em;
+  }
+  .avatar-name {
+    margin: 0.5em;
+  }
 }
