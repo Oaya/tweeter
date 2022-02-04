@@ -51,18 +51,18 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="nav_logo">tweeter</span>
-      <div class="nav_right">
+    <nav class="nav">
+      <span class="nav__logo">tweeter</span>
+      <div class="nav__right">
         <span><strong> Write</strong> a new tweet</span>
-       <i class="nav_arrow fas fa-angle-double-down"></i></div>
+       <i class="nav__arrow fas fa-angle-double-down"></i></div>
       </div>
     </nav>
 
-    <header class="avatar-header">
-      <div class="avatar-img-box">
-        <img class ="avatar-img" src="/images/profile-hex.png" alt="avater-image" />
-        <div class="avatar-name"><strong>Aya</strong> O</div>
+    <header class="avatar__header">
+      <div class="avatar__img-box">
+        <img class ="avatar__img" src="/images/profile-hex.png" alt="avater-image" />
+        <div class="avatar__name"><strong>Aya</strong> O</div>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
@@ -73,14 +73,14 @@
       <section class="new-tweet">
         <div class="alert">
           <i class="fas fa-exclamation-triangle"></i>
-          <span class="alert-message"></span>
+          <span class="alert__message"></span>
           <i class="fas fa-exclamation-triangle"></i>
         </div>
-        <form id="new-tweet_form" method="POST" >
+        <form class="new-tweet__form" method="POST" >
 
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="new-tweet_bottom">
-            <button class="tweet_button" type="submit">Tweet</button>
+          <div class="new-tweet__bottom">
+            <button class="new-tweet__button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">
               140
             </output>

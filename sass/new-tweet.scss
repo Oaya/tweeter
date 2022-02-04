@@ -1,0 +1,53 @@
+.new-tweet {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  &__bottom {
+    display: flex;
+    font-family: "bungee";
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+
+  &__button {
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem;
+  }
+}
+
+textarea {
+  resize: none;
+  border: none;
+  border-bottom: var(--line);
+  background-color: #f4f1ec;
+
+  &:focus {
+    outline: none;
+    border-bottom: rgb(107, 107, 248) solid 3px;
+  }
+}
+
+.alert {
+  color: var(--color-red);
+  border: var(--color-red) solid 3px;
+  padding: 0.8rem 1.5rem;
+  margin: 2rem 0 3rem;
+
+  &__message {
+    margin: 0 1rem;
+  }
+}
+
+.btn_red {
+  color: var(--color-red);
+}
+@media only screen and (min-width: 768px) {
+  .new-tweet__form {
+    margin-top: 0;
+  }
+}

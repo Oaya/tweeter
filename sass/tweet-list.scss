@@ -1,0 +1,60 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.tweet {
+  border: var(--line);
+  padding: 1.5rem 2rem;
+  margin-bottom: 8rem;
+
+  &:hover {
+    box-shadow: 8px 5px 5px rgb(96, 133, 202);
+  }
+
+  &__header {
+    @include flexCenter;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  &__header-left {
+    @include flexCenter();
+    justify-content: center;
+  }
+
+  &__name {
+    margin-left: 1.5rem;
+  }
+
+  &__handle-name {
+    color: var(--color-primary-light);
+  }
+
+  &__footer {
+    @include flexCenter;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 0.5rem;
+    border-top: var(--line);
+  }
+
+  &__time {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  &__text {
+    margin-left: 2rem;
+  }
+}
+
+.icon {
+  margin-right: 1.2rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+
+  &:hover {
+    color: rgb(189, 149, 64);
+  }
+}

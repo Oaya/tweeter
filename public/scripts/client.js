@@ -1,16 +1,17 @@
 (function () {
   $(document).ready(() => {
-    $("#new-tweet_form").on("submit", onSubmit);
-    $(".nav_arrow").on("click", onClick);
+    $(".new-tweet__form").on("submit", onSubmit);
+    $(".nav__arrow").on("click", onClick);
     loadTweets();
   });
 
   //fetch tweets form /tweets page//
   const loadTweets = () => {
-    //hide the alert message first render//
+    //hide the alert,scrollbutton, and input field first render//
     $(".alert").hide();
     $(".new-tweet").hide();
     $(".scroll-arrow").hide();
+
     $.get("/tweets")
       .then((tweets) => {
         renderTweets(tweets);
@@ -33,24 +34,23 @@
     const safeHTML = escape(tweetData.content.text);
 
     const $tweet = `
-  <article class="tweet-list">
-          <header class="tweet-header">
-            <div class="tweet-header_left">
+  <article class="tweet">
+          <header class="tweet__header">
+            <div class="tweet__header-left">
               <img
-               
                 src="${tweetData.user.avatars}"
                 alt="face icon"
               />
-              <p class="name"> ${tweetData.user.name}</p>
+              <p class="tweet__name"> ${tweetData.user.name}</p>
             </div>
 
-            <p class="handle-name">${tweetData.user.handle}</p>
+            <p class="tweet__handle-name">${tweetData.user.handle}</p>
           </header>
-          <div class="tweet-text">
+          <div class="tweet__text">
           ${safeHTML}
           </div>
-          <footer class="tweet-footer">
-            <span class="tweet-time">${timePast}</span>
+          <footer class="tweet__footer">
+            <span class="tweet__time">${timePast}</span>
             <div class="tweet-footer-right">
               <i class="icon fa-solid fa-flag"></i>
               <i class="icon fas fa-retweet"></i>
@@ -113,7 +113,7 @@
   const onClick = function () {
     $(".new-tweet")
       .toggle()
-      .children("#new-tweet_form")
+      .children(".new-tweet__form")
       .children("#tweet-text")[0]
       .focus();
   };

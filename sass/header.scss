@@ -1,0 +1,46 @@
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  &__header {
+    @include flexColumn;
+
+    font-size: 4rem;
+    background-color: var(--color-primary-light);
+    background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+    margin-bottom: 5rem;
+  }
+  &__img-box {
+    margin-top: 12rem;
+  }
+  &__name {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .avatar {
+    &__header {
+      display: inline-block;
+      width: 35%;
+      margin-top: 200px;
+      margin-left: 1em;
+    }
+    &__img-box {
+      @include flexColumn;
+      margin-top: 0.5em;
+    }
+    &__img {
+      height: 4.5em;
+      width: 4.5em;
+    }
+    &__name {
+      margin: 0.5em;
+    }
+  }
+}

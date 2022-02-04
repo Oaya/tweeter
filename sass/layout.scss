@@ -3,6 +3,7 @@
   --color-primary-light: #a1c9eb;
   --color-red: #ff0000;
   --color-white: #ffffff;
+
   --line: black solid 3px;
 }
 
@@ -11,7 +12,6 @@ html {
   font-size: 62.5%;
   /* 1rem = 10px; 10 /16px = 62.5%   */
 }
-
 *,
 *:before,
 *:after {
@@ -21,6 +21,7 @@ html {
 /*
  * Global layout stuff
  */
+
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -47,7 +48,6 @@ main {
   html {
     max-width: 1024px;
   }
-
   main {
     margin-top: 200px;
     width: 50%;

@@ -1,7 +1,11 @@
-.nav {
+@mixin flexRow {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.nav {
+  @include flexRow;
   justify-content: space-between;
   background-color: transparent;
   color: var(--color-primary);
@@ -11,32 +15,39 @@
   width: 100vw;
   position: fixed;
   top: 0;
-}
-.nav__logo {
-  font-family: "Bungee", cursive;
-  font-size: 1.5em;
-}
-.nav__right {
-  margin-top: 2.3rem;
-}
-.nav__arrow {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.8rem;
-  color: var(--color-red);
-  cursor: pointer;
-  animation: MoveUpDown 1s infinite;
-  transition: all 0.3s;
+
+  &__logo {
+    font-family: "Bungee", cursive;
+    font-size: 1.5em;
+  }
+
+  &__right {
+    margin-top: 2.3rem;
+  }
+
+  &__arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8rem;
+    color: var(--color-red);
+    cursor: pointer;
+    animation: MoveUpDown 1s infinite;
+    transition: all 0.3s;
+  }
 }
 
 /* animation */
 @keyframes MoveUpDown {
+  0%,
+  100% {
+  }
   50% {
     transform: translateY(-5px);
   }
 }
+
 @media only screen and (min-width: 768px) {
   .nav {
     background-color: var(--color-primary);

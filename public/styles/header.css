@@ -1,40 +1,40 @@
-.avatar-header {
+.avatar__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  background-color: #a1c9eb;
+  background-color: var(--color-primary-light);
   background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
   margin-bottom: 5rem;
 }
-.avatar-img-box {
+.avatar__img-box {
   margin-top: 12rem;
 }
-.avatar-name {
+.avatar__name {
   margin-bottom: 3rem;
   text-align: center;
 }
 
 @media only screen and (min-width: 768px) {
-  .avatar-header {
+  .avatar__header {
     display: inline-block;
     width: 35%;
     margin-top: 200px;
     margin-left: 1em;
   }
-  .avatar-img-box {
+  .avatar__img-box {
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
     align-items: center;
     margin-top: 0.5em;
   }
-  .avatar-img {
+  .avatar__img {
     height: 4.5em;
     width: 4.5em;
   }
-  .avatar-name {
+  .avatar__name {
     margin: 0.5em;
   }
 }
