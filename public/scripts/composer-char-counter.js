@@ -6,6 +6,7 @@
     $(".scroll-arrow").on("click", click);
   });
 
+  //count the number of tweets words//
   const output = function () {
     const $counter = $(".counter");
 
