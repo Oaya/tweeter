@@ -37,6 +37,7 @@
 }
 .tweet__text {
   margin-left: 2rem;
+  word-wrap: break-word;
 }
 
 .icon {

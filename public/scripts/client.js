@@ -9,7 +9,6 @@
   const loadTweets = () => {
     //hide the alert,scrollbutton, and input field first render//
     $(".alert").hide();
-    $(".new-tweet").hide();
     $(".scroll-arrow").hide();
 
     $.get("/tweets")
@@ -85,16 +84,16 @@
   //post new tweet //
   const onSubmit = function (e) {
     e.preventDefault();
-
+    $(".alert").slideUp();
     const serializedData = $(this).serialize();
     const textarea = $(this).children("#tweet-text").val();
 
     const error = checktweetLength(textarea);
-
+    console.log(error.message);
     if (error.message) {
       return $(".alert")
         .slideDown()
-        .children(".alert-message")
+        .children(".alert__message")
         .text(error.message);
     } else {
       $.post("/tweets", serializedData)
