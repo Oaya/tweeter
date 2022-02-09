@@ -12,7 +12,7 @@
     let textLength = $(this).val().length;
     let remainingLength = maxmumLength - textLength;
 
-    if (remainingLength < 10) {
+    if (remainingLength < 140) {
       return $counter.addClass("btn_red");
     }
     $counter.removeClass("btn_red");
