@@ -91,15 +91,14 @@
     const error = checktweetLength(textarea);
     console.log(error.message);
     if (error.message) {
+      setTimeout(() => {
+        $(".alert").slideUp();
+      }, 5000);
+
       return $(".alert")
         .slideDown()
         .children(".alert__message")
-        .text(error.message)
-        .then(
-          setTimeout(() => {
-            $(".alert").slideUp();
-          }, 5000)
-        );
+        .text(error.message);
     } else {
       $.post("/tweets", serializedData)
         .then(() => {

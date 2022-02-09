@@ -8,15 +8,15 @@
 
   const output = function () {
     const $counter = $(".counter");
-    const maxmumLength = 140;
+
     let textLength = $(this).val().length;
-    let remainingLength = maxmumLength - textLength;
+    let remainingLength = 140 - textLength;
+    $counter.text(remainingLength);
 
     if (remainingLength < 0) {
       return $counter.addClass("btn_red");
     }
     $counter.removeClass("btn_red");
-    $counter.text(maxmumLength - textLength);
   };
 
   //when scroll it's appear//
