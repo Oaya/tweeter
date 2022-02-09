@@ -84,7 +84,7 @@
   //post new tweet //
   const onSubmit = function (e) {
     e.preventDefault();
-    $(".alert").slideUp();
+
     const serializedData = $(this).serialize();
     const textarea = $(this).children("#tweet-text").val();
 
@@ -94,7 +94,12 @@
       return $(".alert")
         .slideDown()
         .children(".alert__message")
-        .text(error.message);
+        .text(error.message)
+        .then(
+          setTimeout(() => {
+            $(".alert").slideUp();
+          }, 5000)
+        );
     } else {
       $.post("/tweets", serializedData)
         .then(() => {
